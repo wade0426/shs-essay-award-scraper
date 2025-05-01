@@ -1,2 +1,54 @@
-# shs-essay-award-scraper
-This Python script uses requests and BeautifulSoup4 to scrape historical award winner lists for the SHS essay contest (小論文) from www.shs.edu.tw. It iterates through different contest batches and areas, extracting details like school, author, title, rank, and link, then saves the data to an Excel (.xlsx) file using openpyxl.
+# 小論文競賽獲獎紀錄抓取器
+
+最後更新時間：2022/07/18
+
+## 專案簡介
+
+這是一個專門用於爬取全國高級中等學校小論文競賽獲獎紀錄的工具。透過網路爬蟲技術，本工具能夠自動從全國高級中等學校小論文比賽網站（www.shs.edu.tw）擷取獲獎資訊，並將結果整理成結構化的Excel檔案，方便使用者進行後續分析與應用。
+
+## 功能特色
+
+- 支援多梯次資料抓取（如1110315、1101015、1100315等）
+- 支援全台灣各區域資料爬取（編號1-19）
+- 自動擷取包含以下資訊：
+  - 論文類別
+  - 區域
+  - 縣市
+  - 學校名稱
+  - 年級
+  - 科別
+  - 班級
+  - 作者
+  - 指導老師
+  - 作品標題
+  - 名次
+  - 論文連結
+  - 參賽梯次
+
+## 技術架構
+
+- Python 3
+- 使用的主要套件：
+  - BeautifulSoup4：用於解析HTML網頁內容
+  - Requests：處理HTTP請求
+  - openpyxl：用於建立Excel檔案
+
+## 使用方法
+
+1. 確保已安裝所需的Python套件：
+   ```bash
+   pip install requests beautifulsoup4 openpyxl
+   ```
+
+2. 執行主要程式碼：
+   ```bash
+   python ShortEssay.py
+   ```
+
+3. 程式執行完畢後，會在同一目錄下產生一個名為`data.xlsx`的檔案，包含所有擷取到的小論文獲獎資料。
+
+## 注意事項
+
+- 網路爬蟲程式可能因目標網站結構更新而需要調整
+- 尊重目標網站的使用規範，避免頻繁請求造成伺服器負擔
+- 本工具僅供學習研究使用，請勿用於商業用途
